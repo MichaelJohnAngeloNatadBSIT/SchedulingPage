@@ -51,7 +51,7 @@
 
       <div class="input-group">
         <label for="birthday">Birthday</label>
-        <input type="text" name="birthday" value=""/>
+        <input type="text" name="birthday"/>
         <script>
           $(function() {
             $('input[name="birthday"]').daterangepicker({

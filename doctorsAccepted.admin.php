@@ -1,7 +1,13 @@
 <?php 
     require 'includes/doc.inc.php';
 ?>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 
+<h1>Accepted Appointments</h1>
 <body>
     <table style="width:100%">
     <tr>

@@ -15,9 +15,6 @@ require 'vendor/autoload.php';
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 if(isset($_POST['set-appointment'])){
-
-
-
     $first_name = $_POST['first-name'];
     $last_name = $_POST['last-name'];
     $gender = $_POST['gender'];
@@ -54,7 +51,7 @@ if(isset($_POST['set-appointment'])){
         $mail_body= nl2br('Good Day! '.$first_name.' '.$last_name.' Your appointment scheduled at '.$appointment_date.' has been noted.<br/>Visit Information<br/>Name: '.$first_name.' '.$last_name.'<br/>Contact Number: '.$contact_number.'<br/>Address: '.$address.'<br/>Birthday: '.$birthday.'<br/>Description: '.$description.'<br/>Have attended in our facility: '.$prev_client.'<br/>Appointment Date: '.$appointment_date.'');
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Appointment for Visiting/Consultations at Saint James Hospital';
-        $mail->Body    = 'Good Day! '.$first_name.' '.$last_name.' Your appointment scheduled at '.$appointment_date.' has been noted.<br/><br/>Visit Information<br/>Name: '.$first_name.' '.$last_name.'<br/>Contact Number: '.$contact_number.'<br/>Address: '.$address.'<br/>Birthday: '.$birthday.'<br/>Description: '.$description.'<br/>Have attended in our facility: '.$prev_client.'<br/>Appointment Date: '.$appointment_date;
+        $mail->Body    = 'Good Day! '.$first_name.' '.$last_name.' Your appointment scheduled at '.$appointment_date.' has been noted.<br/><br/>Visit Information<br/>Name: '.$first_name.' '.$last_name.'<br/>Contact Number: '.$contact_number.'<br/>Address: '.$address.'<br/>Description: '.$description.'<br/>Have attended in our facility: '.$prev_client.'<br/>Appointment Date: '.$appointment_date;
         $mail->AltBody = 'TEST BODYALT';
 
         $mail->send();
