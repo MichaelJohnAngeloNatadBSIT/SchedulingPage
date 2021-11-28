@@ -20,6 +20,7 @@ $mail = new PHPMailer(true);
 if (isset($_POST["accept"])){
         if (isset($_SESSION["cart"])){
             $name = $_POST['hidden_name'];
+            $lname = $_POST['hidden_lname'];
             $description = $_POST['hidden_description'];
             $schedule = $_POST['hidden_schedule'];
             $email_address = $_POST['hidden_email'];
@@ -55,7 +56,7 @@ if (isset($_POST["accept"])){
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
                 $mail->Subject = 'Appointment for Visiting/Consultations at Saint James Hospital';
-                $mail->Body    = 'Good Day! '.$name.' '.$name.' Your appointment scheduled at '.$schedule.' has been accepted and you can visit our facility at the said date.<br/><br/>Visit Information<br/>Name: '.$name.'<br/>Contact Number: '.$contact_number.'<br/>Address: '.$address.'<br/>Description: '.$description.'<br/>Appointment Date: '.$schedule;
+                $mail->Body    = 'Good Day! '.$name.' '.$lname.' Your appointment scheduled at '.$schedule.' has been accepted and you can visit our facility at the said date.<br/><br/>Visit Information<br/>Name: '.$name.'<br/>Contact Number: '.$contact_number.'<br/>Address: '.$address.'<br/>Description: '.$description.'<br/>Appointment Date: '.$schedule;
                 $mail->AltBody = 'TEST BODYALT';
         
                 $mail->send();
@@ -77,7 +78,7 @@ if (isset($_POST["accept"])){
             }
 
             else{
-                echo '<script>alert("Product is already Added to Cart")</script>';
+                echo '<script>alert("Appointment Has been Added to your Schedule")</script>';
                 echo '<script>window.location="doctorsAccepted.admin.php"</script>';
             }
         }
@@ -117,7 +118,7 @@ if (isset($_POST["accept"])){
             foreach($_SESSION["cart"] as $keys => $values){
                 if($values["appointment_id"] == $_GET["id"]){
                     unset($_SESSION["cart"][$keys]);
-                    echo '<script>alert("PRODUCT HAS BEEN REMOVED!")</script>';
+                    echo '<script>alert("APPOINTMENT HAS BEEN REMOVED!")</script>';
                     echo '<script>window.location="doctorsAccepted.admin.php"</script>';
                 }
             }

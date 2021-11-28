@@ -6,7 +6,7 @@ table, th, td {
   border:1px solid black;
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="style.css"/>
 <h1>Accepted Appointments</h1>
 <body>
     <table style="width:100%">
@@ -32,7 +32,6 @@ table, th, td {
                 <input type="button" class="bttn-remove" value="REMOVE"/>
             </a>
         </td>
-        <!-- <td><input class="bttn-addCart" type="submit" value="Accept" name="accept"/></td> -->
 
     </tr>
     <?php 

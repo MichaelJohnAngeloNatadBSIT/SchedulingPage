@@ -12,8 +12,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-/* Heydon Pickering’s lobotomized owl. Details: https://bit.ly/1H7MXUD */
+/* css style for the appointment form */
 * + * {
   margin-top: 1rem;
 }
@@ -144,4 +143,11 @@ p {
 .contact-form button:focus {
   background: var(--color-darkest);
   cursor: pointer;
+}
+
+/* table style */
+table,
+th,
+td {
+  border: 1px solid black;
 }
